@@ -60,7 +60,9 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                performlogin();
+		Username_Text = (EditText) findViewById(R.id.loginscreen_username);
+		Password_Text = (EditText) findViewById(R.id.loginscreen_password);
+                performlogin(Username_Text.getText().toString(), Password_Text.getText().toString());
             }
         });
         createuser_buttons = (Button) findViewById(R.id.button_CreateUser);
@@ -162,13 +164,13 @@ public class LoginActivity extends Activity {
 	Username_Text: Username entered by the user
 	Password_Text: password entered by the user
 	*/
-	protected void performlogin() {
+	protected void performlogin(String username, String password) {
 		// TODO Auto-generated method stub
-		Username_Text = (EditText) findViewById(R.id.loginscreen_username);
-		Password_Text = (EditText) findViewById(R.id.loginscreen_password);
+		//Username_Text = (EditText) findViewById(R.id.loginscreen_username);
+		//Password_Text = (EditText) findViewById(R.id.loginscreen_password);
 		Intent i = new Intent(this, DoLogin.class);
-		i.putExtra("passed_username", Username_Text.getText().toString());
-		i.putExtra("passed_password", Password_Text.getText().toString());
+		i.putExtra("passed_username", username); //.getText().toString());
+		i.putExtra("passed_password", password); //.getText().toString());
 		startActivity(i);
 	}
 
