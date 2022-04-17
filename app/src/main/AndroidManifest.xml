@@ -69,7 +69,7 @@
         <provider
             android:name=".TrackUserContentProvider"
             android:authorities="com.android.insecurebankv2.TrackUserContentProvider"
-            android:exported="true" >
+            android:exported="false" >
         </provider>
 
         <receiver
